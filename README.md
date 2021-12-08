@@ -1,2 +1,1 @@
-# Sky_Pro_hw23
-Домашняя работа №23
+# lesson23_project_source
