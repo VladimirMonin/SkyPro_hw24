@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
 
-@app.route("/perform_query/", methods=['POST', 'GET'])
+@app.route("/perform_query/")
 def perform_query():
     cmd1 = request.args.get('cmd1')
     val1 = request.args.get('val1')
@@ -34,6 +34,9 @@ def perform_query():
             res = '\n'.join([x.split()[val] for x in file])
             return res
     # logging.info(f'Функция вернула {res}, с типом данных {type(res)}')
+
+        if cmd1 == 'unique':
+            res = list(set(file))
     return jsonify(res)
 
     # получить параметры query и file_name из request.args, при ошибке вернуть ошибку 400
