@@ -1,8 +1,8 @@
 def get_query(cmd, val, file):
     global res
     if cmd == 'filter':
-        # res = [x for x in file if val in x] Это быстрее. Но ведь нужны лямбды?)
-        res = list(filter(lambda x: val in x, file))
+        res = [x for x in file if val in x]  # Это быстрее. Но ведь нужны лямбды?)
+        # res = list(filter(lambda x: val in x, file))
     if cmd == 'map':
         res = '\n'.join([x.split()[int(val)] for x in file])
 
